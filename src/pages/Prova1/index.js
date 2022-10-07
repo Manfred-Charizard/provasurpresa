@@ -3,14 +3,14 @@ import './index.scss'
 
 export default function Index(){
 
-
+//Açaí
 const [pequeno, setPequeno] = useState(0);
 const [medio, setMedio] = useState(0);
 const [grande, setGrande] = useState(0);
 const [desconto, setDesconto] = useState(0)
 const [preco, setPreco] = useState(0)
 
-
+//Função Açaí
 function compra(){
     if(pequeno < 0 || medio < 0 || grande < 0 || desconto < 0){
         alert("Insira um valor positivo")
@@ -36,6 +36,10 @@ function compra(){
             <div>
                 O total é R${preco}
             </div>
+
+
+            <h1> Signo </h1>
+            
         </div>
     )
 }
