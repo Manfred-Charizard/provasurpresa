@@ -50,7 +50,8 @@ function Signo (){
     }
     
     catch(err){
-        alert(err)
+        alert(err
+            )
     }
 }
 
@@ -64,8 +65,6 @@ function Signo (){
 
         if(gramas >= 1000){ 
         valor = Math.round(gramas * 3.00); 
-        
-
         } 
         
         setVlTotal(valor / 100);
@@ -79,7 +78,7 @@ function Signo (){
 }
 
     return(
-        <div>
+        <div className='prova-page'>
             <h1> Cálculo de Açaí </h1>
             <div> Açaí pequeno R$13,50 </div>
             <input type="number" value={pequeno} onChange={e => setPequeno(e.target.value)}/>
@@ -98,11 +97,11 @@ function Signo (){
             <div> 
                  <h2> Signo </h2> 
              <div> 
-                 <label>Digite o mês:</label> 
+                 <div>Digite o mês:</div> 
                  <input type="text" value={mes} onChange={e => setMes(e.target.value)}/> 
              </div> 
              <div>   
-                 <label>Digite o dia:</label> 
+                 <div>Digite o dia:</div> 
                  <input type="number" value={dia} onChange={e => setDia(e.target.value)}/> 
              </div> 
 
@@ -113,16 +112,17 @@ function Signo (){
              <div>  
                 {resul === true ? 'O Signo é Libras? é sim' : 'Signo é Libras? Não é não '} 
              </div> 
-
+                
              <h2> Sorveteria</h2> 
                  <div>  
-                     <label> Digite o valor em gramas:</label> 
+                     <div> Digite o valor em gramas:</div> 
                      <input type="number" value={gramas} onChange={e => setGramas(e.target.value)}/> 
                  <div/> 
                  <div> 
                      <button onClick={sorveteria}> Concluir a sua compra</button> 
-                 </div> 
-                   <div> 
+                 </div>
+
+                   <div className='Resultado'> 
                        {vlTotal} 
                    </div> 
                </div> 
