@@ -3,14 +3,25 @@ import './index.scss'
 
 export default function Index(){
 
-//Açaí
+{/*Açaí*/}
 const [pequeno, setPequeno] = useState(0);
 const [medio, setMedio] = useState(0);
 const [grande, setGrande] = useState(0);
 const [desconto, setDesconto] = useState(0)
 const [preco, setPreco] = useState(0)
 
-//Função Açaí
+{/*Signo*/}
+const [dia, setDia ] = useState (0); 
+const [mes, setMes]  = useState (''); 
+const [resul, setResul] = useState (false);
+
+
+{/*Sorveteria*/} 
+const [gramas, setGramas] = useState(0); 
+const [vlTotal, setVlTotal] = useState(0);
+
+
+{/*Função do Açaí*/}
 function compra(){
     if(pequeno < 0 || medio < 0 || grande < 0 || desconto < 0){
         alert("Insira um valor positivo")
@@ -21,6 +32,52 @@ function compra(){
 
     setPreco(total)
 }
+
+{/*Função do Signo*/} 
+function Signo (){ 
+    try{
+    let reposta = false 
+    
+    if (dia <= 0 || mes === Number) { 
+    throw new Error('Dia ou mês inválido'); 
+   } 
+
+    if (mes === "setembro" && dia >= 23 && dia <= 30 || mes === "outubro" && dia >= 1 && dia <=22){ 
+           
+          reposta = true 
+    } 
+       setResul(reposta)
+    }
+    
+    catch(err){
+        alert(err)
+    }
+}
+
+{/*Função do Sorveteria*/}
+    function sorveteria(){ 
+        try{
+        if(gramas <= 0){
+            alert('Peso inválido')
+        } 
+        let valor = gramas * 3.50; 
+
+        if(gramas >= 1000){ 
+        valor = Math.round(gramas * 3.00); 
+        
+
+        } 
+        
+        setVlTotal(valor / 100);
+           
+    }   
+
+    catch(err){
+        alert("Deu erro aí felas")
+    }
+     
+}
+
     return(
         <div>
             <h1> Cálculo de Açaí </h1>
@@ -34,11 +91,41 @@ function compra(){
             <input type='number'value={desconto} onChange={e => setDesconto(e.target.value)} />
             <button onClick={compra}> Comprar </button>
             <div>
-                O total é R${preco}
+                O total da sua compra é R${preco}
             </div>
 
 
-            <h1> Signo </h1>
+            <div> 
+                 <h2> Signo </h2> 
+             <div> 
+                 <label>Digite o mês:</label> 
+                 <input type="text" value={mes} onChange={e => setMes(e.target.value)}/> 
+             </div> 
+             <div>   
+                 <label>Digite o dia:</label> 
+                 <input type="number" value={dia} onChange={e => setDia(e.target.value)}/> 
+             </div> 
+
+             </div> 
+             <div> 
+                 <button onClick={Signo}> Checar Signo Libra </button>  
+             </div> 
+             <div>  
+                {resul === true ? 'O Signo é Libras? é sim' : 'Signo é Libras? Não é não '} 
+             </div> 
+
+             <h2> Sorveteria</h2> 
+                 <div>  
+                     <label> Digite o valor em gramas:</label> 
+                     <input type="number" value={gramas} onChange={e => setGramas(e.target.value)}/> 
+                 <div/> 
+                 <div> 
+                     <button onClick={sorveteria}> Concluir a sua compra</button> 
+                 </div> 
+                   <div> 
+                       {vlTotal} 
+                   </div> 
+               </div> 
             
         </div>
     )
