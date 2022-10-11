@@ -126,6 +126,7 @@ function Signo (){
                        {vlTotal} 
                    </div> 
                </div> 
+               
             
         </div>
     )
