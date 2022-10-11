@@ -119,7 +119,8 @@ export default function Index(){
             <h1>Situação da febre</h1>
             <div>
                 <label>Indique a sua temperatura corporal:</label>
-                <input type= "number" value={Temperatura} onChange={e => setTemperatura(Number(e.target.value))}/>
+                <input type= "number" value={Temperatura} onChange={e => setTemperatura(Number(e.target.value
+                    ))}/>
             
             </div>
 
