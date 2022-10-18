@@ -7,7 +7,11 @@ export default function Index() {
     const [inicio, setInicio] = useState('');
     const [final, setFinal] = useState('');
     const [resp, setResp] = useState([]);
+    const [Nlinha, setNlinha] = useState('');
+    const [R, setR] = useState('');
 
+
+    
 
     
     //função contar 
@@ -25,7 +29,22 @@ export default function Index() {
     async function aooa(){
         let a = Contar(inicio, final)
         setResp(a);
+
     }
+
+    function Linha (t){
+        const y =[];
+        for (let x= 1; x <= t; x++){
+            y[x] = "* ";
+        }
+        return y;
+    }
+
+    async function ver(){
+        let x = Linha(Nlinha)
+        setR(x)
+    }
+
     return (
 
         <div>
@@ -42,7 +61,19 @@ export default function Index() {
             <div>
                {resp}
             </div>
+            <div>
+                <h1>Formar linha</h1>
+                <div>
+                    <label>Insira o numero de asteriscos </label>
+                    <input type='number' value={Nlinha} onChange={e =>setNlinha(e.target.value)} /> 
+                </div>
+                <button onClick={ver}>Criar</button>
+                <div>
+                    {R}
+                </div>
+            </div>
         </div>
+        
     )
 
 }
