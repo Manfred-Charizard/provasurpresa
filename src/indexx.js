@@ -1,13 +1,17 @@
+function Formas(b, a){
+    const y=[];
+    const w=[];
 
-export default function Contar(i, f){
-        while (i < f) {
-            console.log(i);
-            i++;
-        }
-
-        return i;
-
+    for(let z = 1; z <= b; z++){
+        y[z] = '* ';
+    }
+    for(let x = 1; x <= a; x++){
+        w[x] = y;
     }
 
-let x = Contar(1, 5);
-console.log(x);
+    return w;
+
+}
+
+let v = Formas(2, 5);
+console.log(v);
