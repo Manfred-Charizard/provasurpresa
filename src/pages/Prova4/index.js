@@ -1,6 +1,5 @@
 import { useState } from "react";
 import './index.scss';
-import '../../../public/images/f1.png';
 
 
 export default function Index() {
@@ -21,9 +20,8 @@ export default function Index() {
     const [respos, setRespos] = useState([]);
     const [lin, setLin] = useState('');
     const [colu, setColu] = useState('');
-    const [img, setImg] = useState();
     const [respost, setRespost] = useState([]);
-    
+
 
     function Contar(inicio, final) {
         let z = 0;
@@ -119,28 +117,28 @@ export default function Index() {
     }
 
 
-    function imagem() {
-        const y = [];
-        const w = [];
+    //function imagem() {
+    //    const y = [];
+    //    const w = [];
+    //
+    //    for (let z = 1; z <= colu; z++) {
+    //        y[z] = img;
+    //    }
+    //
+    //    for (let x = 1; x <= lin; x++) {
+    //        w[x] = y;
+    //    }
+    //
+    //    return w;
+    //
+    //
+    //}
 
-        for (let z = 1; z <= colu; z++) {
-            y[z] = img;
-        }
-
-        for (let x = 1; x <= lin; x++) {
-            w[x] = y;
-        }
-
-        return w;
-
-
-    }
-
-    async function verificar() {
-        let x = imagem(colu, lin)
-        setRespost(x);
-    }
-
+    //async function verificar() {
+    //    let x = imagem(colu, lin)
+    //    setRespost(x);
+    //}
+    
     return (
 
         <div>
@@ -209,7 +207,7 @@ export default function Index() {
             <div>
                 <input type="number" value={lin} onChange={e => setLin(e.target.value)} />
             </div>
-            <img src=""
+            <img src="" />
             <button onClick={verificar}> SÓ VAI </button>
             <div className="pa">
                 {respost.map(respost => <div> {respost} </div>)}
