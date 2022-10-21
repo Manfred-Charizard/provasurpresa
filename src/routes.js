@@ -3,6 +3,7 @@ import Acai from './pages/Prova1/index.js'
 import Salario from './pages/Prova2/index.js'
 import Orcamento from './pages/prova3/index.js'
 import Array from './pages/Prova4/index.js'
+import Cafe from './pages/Prova5/index.js'
 
 export default function SiteRoutes(){
     return(
@@ -12,7 +13,7 @@ export default function SiteRoutes(){
                 <Route path='/salario' element={<Salario />} />
                 <Route path='/orcamento' element={<Orcamento />} />
                 <Route path='/contagem' element={<Array/>} />
-        
+                <Route path='/cafe' element={<Cafe/>} />
             </Routes>
         </BrowserRouter>
     )
