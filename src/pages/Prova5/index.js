@@ -46,17 +46,23 @@ export default function Cafe() {
     }
 
     return (
-        <main>
+        <main className='prova-page'>
             <h1> Café </h1>
 
             <div>
-                Insira a Quantidade de Estudantes <input type='number' value={estudante} onChange={e => setEstudante(e.target.value)} />
+                <label>Insira a Quantidade de Estudantes: </label>
+                <br/>
+                <input type='number' value={estudante} onChange={e => setEstudante(e.target.value)} />
             </div>
             <div>
-                Insira a Quantidade de Litros do recipiente <input type='number' value={recipiente} onChange={e => setRecipiente(e.target.value)} />
+            <label>Insira a Quantidade de Litros do recipiente:</label>
+                <br/>
+                <input type='number' value={recipiente} onChange={e => setRecipiente(e.target.value)} />
             </div>
             <div>
-                Insira a Quantidade de ml  <input type='number' value={milimetros} onChange={e => setMilimetros(e.target.value)} />
+            <label>Insira a Quantidade de ml: </label>
+                <br/>   
+                <input type='number' value={milimetros} onChange={e => setMilimetros(e.target.value)} />
             </div>
 
             <div>
